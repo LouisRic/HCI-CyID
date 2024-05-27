@@ -1,0 +1,61 @@
+body{padding:0; margin:0; width:100%;}
+
+.home-content {
+    background: url("asset/");
+    background-color: black;
+    height: 50rem;
+    width: 100%;
+}
+
+.navbar {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 2.5rem;
+    align-items: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.left-navbar {
+    flex: 1;
+    text-align: right;
+}
+
+.left-navbar ul li {
+    display: inline-block;
+    padding: 0.25rem 2rem;
+    position: relative;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container-laporkan {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container-laporkan * {
+    color: #fff;
+}
+
+.container-laporkan div {
+    width: 50%;
+}
+
+.container-laporkan button {
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    margin: 1rem;
+}
