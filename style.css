@@ -1,21 +1,42 @@
+@font-face {
+    font-family: molde-semi;
+    src: url(/Fonts-Molde/molde-semi.ttf);
+}
+@font-face {
+    font-family: molde-light;
+    src: url(/Fonts-Molde/molde-light.ttf);
+}
+@font-face {
+    font-family: molde-regular;
+    src: url(/Fonts-Molde/molde-regular.ttf);
+}
+
 body{padding:0; margin:0; width:100%;}
+
+* {
+    box-sizing: border-box;
+}
 
 .home-content {
     background: url("asset/");
     background-color: black;
     height: 50rem;
-    width: 100%;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .lapor-content {
     background: url("asset/");
     background-color: cadetblue;
-    height: 50rem;
+    min-height: 100vh;
     width: 100%;
+    margin-bottom: 0;
 }
 
 .navbar {
-    background-color: aqua;
+    font-family: molde-semi;
+    background-color: green;
     display: flex;
     justify-content: space-between;
     padding: 0.25rem 2.5rem;
@@ -33,13 +54,28 @@ body{padding:0; margin:0; width:100%;}
 
 .left-navbar ul li {
     display: inline-block;
-    padding: 0.25rem 2rem;
+    margin: 0rem 2rem;
     position: relative;
+    height: 100%;
 }
 
 .navbar a {
     color: #fff;
     text-decoration: none;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: 2px;
+    width: 0;
+    background: #fff;
+}
+
+.navbar a:hover::before {
+    width: 100%;
 }
 
 .container-laporkan {
@@ -49,6 +85,13 @@ body{padding:0; margin:0; width:100%;}
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.container-laporkan h1{
+    font-family: molde-semi;
+}
+.container-laporkan h3{
+    font-family: molde-regular;
+    font-size: medium;
 }
 
 .container-laporkan * {
@@ -65,10 +108,22 @@ body{padding:0; margin:0; width:100%;}
     border-radius: 0.5rem;
     border: 1px solid #fff;
     margin: 1rem;
+    font-family: molde-regular;
 }
 
 .container-laporkan button:hover {
     background-color: #f1f1f1;
+}
+
+.container-laporkan{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
 }
 
 .form-container {
@@ -76,23 +131,38 @@ body{padding:0; margin:0; width:100%;}
     justify-content: center;
     align-items: center;
     margin: 6rem;
+    border-radius: 7px;
+    border: black solid;
 }
 
 .lapor-form {
     background-color: aliceblue;
     width: 100%;
     padding-bottom: 2rem;
+    border-radius: 7px;
 }
 
 .lapor-form-header {
     background-color: #f1f1f1;
     padding: 1.5rem 0;
     margin-bottom: 1rem;
+    border-radius: 7px;
+}
+
+.lapor-form-header{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
 }
 
 .lapor-form-header h1 {
     margin: 0;
     text-align: center;
+    font-family: molde-semi;
 }
 
 .lapor-form-input-container {
@@ -104,6 +174,7 @@ body{padding:0; margin:0; width:100%;}
     justify-content: center;
     padding: 0.25rem 6rem;
     font-size: 1.25rem;
+    font-family: molde-regular;
 }
 
  .lapor-form-input span {
@@ -124,6 +195,7 @@ body{padding:0; margin:0; width:100%;}
 
 .lapor-form-input input:focus {
     background-color: #f1f1f1;
+    font-family: molde-light;
 }
 
 .lapor-form-input textarea {
@@ -154,6 +226,7 @@ body{padding:0; margin:0; width:100%;}
     background-color: #fff;
     margin: 1rem;
     font-size: 1.25rem;
+    font-family: molde-semi;
 }
 
 #lapor-button button:hover {
@@ -162,6 +235,7 @@ body{padding:0; margin:0; width:100%;}
 
 .tentangkami-content {
     background-color: bisque;
+    min-height: 100vh;
 }
 
 .tentangkami-container {
@@ -172,12 +246,24 @@ body{padding:0; margin:0; width:100%;}
     margin: 8rem;
 }
 
+.tentangkami-container{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+}
+
 .tentangkami-container img {
     height: 8rem;
     width: 8rem;
 }
 
 .tentangkami-container h1 {
+    font-family: molde-semi;
     text-align: center;
     color: #fff;
 }
@@ -189,22 +275,86 @@ body{padding:0; margin:0; width:100%;}
     background-color: rgb(1, 1, 1, 0.3);
     border: #fff solid 1px;
     border-radius: 1rem;
+    font-family: molde-light;
 }
 
 .panduan-content {
     background-color: #BFB5AE;
+    min-height: 100vh;
 }
 
 .panduan-container {
     padding: 4rem;
 }
 
+.panduan-container{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+}
+
 .panduan-container h1 {
     text-align: left;
-    font-size: 6rem;
+    font-size: 3rem;
+    font-family: molde-semi;
 }
 
 .panduan-container p {
+    font-family: molde-regular;
     text-align: justify;
-    font-size: 3rem;
+    font-size: 1.5rem;
+}
+
+.tentangkami-container .visi {
+    width: 100%;
+    border-radius: 0;
+    text-align: center;
+    padding: 2rem 22rem;
+}
+
+.tentangkami-container .misi {
+    display: flex;
+    justify-content: center;
+}
+
+.tentangkami-container .misi div {
+    background: none;
+    border: none;
+}
+
+.tentangkami-container .misi div:not(.misi-number){
+    margin-right: 2rem;
+    width: 25%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: yellowgreen;
+}
+
+footer span {
+    color: #fff;
+}
+
+footer .footer-social-media {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .footer-social-media div {
+    display: flex;
+    margin: 0.5rem 4rem;
+}
+
+footer .footer-social-media div img {
+    width: 1.5rem;
 }
